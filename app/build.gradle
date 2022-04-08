@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id("org.openjfx.javafxplugin") version "0.0.12"
 }
 
 repositories {
@@ -24,9 +25,14 @@ dependencies {
     implementation 'com.google.guava:guava:30.1.1-jre'
 }
 
+javafx{
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.graphics']
+    version = '18'
+}
+
 application {
     // Define the main class for the application.
-    mainClass = 'comp3021lab.App'
+    mainClass = 'comp3021\\app\\src\\main\\java\\base\\NoteBookWindow.java'
 }
 
 tasks.named('test') {
