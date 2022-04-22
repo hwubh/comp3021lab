@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Folder implements Comparable<Folder>, Serializable{
+    private static final long serialVersionUID = 5214961399056597845L;
     private ArrayList<Note> notes;
 	private String name;
 
@@ -14,6 +15,18 @@ public class Folder implements Comparable<Folder>, Serializable{
 		notes = new ArrayList<Note>();
         this.name = name;
 	}
+    
+    public boolean removeNotes(String title) {
+        
+        for(Note note: this.getNotes()){
+            if(note.getTitle().compareTo(title) == 0){
+                notes.remove(note);
+                return true;
+            }
+        }
+        return false;
+     }
+     
 
 	public void addNote(Note note){
 		notes.add(note);
@@ -80,7 +93,7 @@ public class Folder implements Comparable<Folder>, Serializable{
                 else if (note instanceof TextNote){
                     TextNote n = (TextNote) note;
                     String test = n.getContent();
-                    if(n.getContent().toLowerCase().contains(keyword[i].toLowerCase())){
+                    if(n.getContent() != null && n.getContent().toLowerCase().contains(keyword[i].toLowerCase())){
                         if((i + 1 < keyword.length) && (keyword[i+1].compareTo("or") == 0 || keyword[i+1].compareTo("OR") == 0)){
                             i += 2;
                         }

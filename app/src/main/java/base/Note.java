@@ -5,8 +5,10 @@ import java.io.Serializable;
 import java.lang.String;
 
 public class Note implements Comparable<Note>, Serializable{
+    private static final long serialVersionUID = -1630030584483910536L;
     private Date date;
 	private String title;
+    protected Object content;
 	
 	public Note(String title){
 		this.title = title;

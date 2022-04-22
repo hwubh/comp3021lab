@@ -9,7 +9,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class NoteBook implements Serializable {
-	private ArrayList<Folder> folders = new ArrayList<Folder>();
+	private static final long serialVersionUID = -5756298698047880134L;
+	ArrayList<Folder> folders = new ArrayList<Folder>();
 
 	public NoteBook() {
 
@@ -28,6 +29,7 @@ public class NoteBook implements Serializable {
 		try {
 			fis = new FileInputStream(file);
 			in = new ObjectInputStream(fis);
+			//System.out.printf("in is: \s", in.toString());
 			NoteBook n = (NoteBook) in.readObject();
 			this.folders = n.getFolders();
 			in.close();

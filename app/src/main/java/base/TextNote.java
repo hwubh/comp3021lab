@@ -8,7 +8,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class TextNote extends Note {
-    private String content;
+    private static final long serialVersionUID = 9020159955693642552L;
+    String content;
 
     public TextNote(String title) {
         super(title);
