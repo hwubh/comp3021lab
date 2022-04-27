@@ -6,6 +6,36 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LettersUI",
+            "request": "launch",
+            "mainClass": "lab9.LettersUI",
+            "vmArgs": "--module-path C:\\Users\\admin\\javafx\\javafx-sdk-18\\lib --add-modules=javafx.controls",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "Launch RacyCounter",
+            "request": "launch",
+            "mainClass": "lab9.RacyCounter",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "Launch FindMax",
+            "request": "launch",
+            "mainClass": "lab9.FindMax",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
+            "name": "Launch UnresponsiveUI",
+            "request": "launch",
+            "vmArgs": "--module-path C:\\Users\\admin\\javafx\\javafx-sdk-18\\lib --add-modules=javafx.controls",
+            "mainClass": "lab9.UnresponsiveUI",
+            "projectName": "app"
+        },
+        {
+            "type": "java",
             "name": "Launch testLab4",
             "request": "launch",
             "mainClass": "base.testLab4",
